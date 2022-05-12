@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'chair-img': "url('/src/assets/images/chair.png')",
+      }
+    },
   },
   daisyui: {
     themes: [
