@@ -1,9 +1,12 @@
 import React from 'react';
 import Banner from './Banner/Banner';
+import ContactForm from './ContactForm';
+import Footer from './Footer';
 import Information from './Information/Information';
 import MakeAppointment from './MakeAppointment/MakeAppointment';
 import ServiceBanner from './Services/ServiceBanner/ServiceBanner';
 import Services from './Services/Services';
+import Testimonials from './Testimonials';
 
 
 const Home = () => {
@@ -16,6 +19,9 @@ const Home = () => {
             <Services></Services>
             <ServiceBanner></ServiceBanner>
             <MakeAppointment></MakeAppointment>
+            <Testimonials></Testimonials>
+            <ContactForm></ContactForm>
+            <Footer></Footer>
         </div>
     );
 };
