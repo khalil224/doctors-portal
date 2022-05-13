@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterDate from './FooterDate';
 
 const Footer = () => {
     return (
@@ -6,29 +7,26 @@ const Footer = () => {
             <div className='footer' >
                 <div>
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Emergency Checkup</a>
+                    <a className="link link-hover">Monthly Checkup</a>
+                    <a className="link link-hover">Weekly Checkup</a>
+                    <a className="link link-hover">Deep Checkup</a>
                 </div>
                 <div>
-                    <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <span className="footer-title">ORAL HEALTH</span>
+                    <a className="link link-hover">Flouride Treatement</a>
+                    <a className="link link-hover">Cavity Filling</a>
+                    <a className="link link-hover">Teath Whitening</a>
+
                 </div>
                 <div>
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <span className="footer-title">OUR ADDRESS</span>
+                    <a className="link link-hover">Dhanmondi,1102,Dhaka</a>
+
                 </div>
             </div>
-            <footer className="my-10 text-center">
-                <div>
-                    <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
-                </div>
+            <footer className="mt-10 text-center bottom-0">
+                <FooterDate></FooterDate>
             </footer>
         </footer>
     );
