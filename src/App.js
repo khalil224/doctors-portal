@@ -11,9 +11,10 @@ import PrivateAuth from './Pages/Login/PrivateAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function App() {
   return (
-    <div className='max-w-7xl mx-auto '>
+    <div className='max-w-9xl mx-auto'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -23,6 +24,7 @@ function App() {
         <Route path='appointment' element={<PrivateAuth>
           <Appointment></Appointment>
         </PrivateAuth>}></Route>
+
       </Routes>
       <ToastContainer />
     </div>
