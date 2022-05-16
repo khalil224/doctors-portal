@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Navbar from './Pages/Shared/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -7,6 +7,9 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
 import Appointment from './Pages/Appointment/Appointment';
 import SignUp from './Pages/Login/SignUp';
+import PrivateAuth from './Pages/Login/PrivateAuth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -17,8 +20,11 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='appointment' element={<Appointment></Appointment>}></Route>
+        <Route path='appointment' element={<PrivateAuth>
+          <Appointment></Appointment>
+        </PrivateAuth>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

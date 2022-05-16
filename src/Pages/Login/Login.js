@@ -3,7 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -22,6 +22,9 @@ const Login = () => {
         navigate('/signup')
     }
 
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
     let signInError;
 
     const onSubmit = data => {
@@ -38,24 +41,24 @@ const Login = () => {
     }
 
     if (user || gUser) {
-        console.log(user || gUser);
+        navigate(from, { replace: true });
 
     }
 
     return (
         <div className='flex h-screen justify-center items-center '>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-2xl font-bold ">Login</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold ">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
 
-                            </label>
-                            <input type="email" class="input input-bordered w-full max-w-xs"  {...register("email", {
+                            </label >
+                            <input type="email" className="input input-bordered w-full max-w-xs"  {...register("email", {
                                 required: {
                                     value: true,
                                     message: 'Email is required'
@@ -65,19 +68,19 @@ const Login = () => {
                                     message: 'Provide a valid email'
                                 }
                             })} />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                            <label className="label" >
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500"> {errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500" > {errors.email.message}</span >}
 
 
-                            </label>
-                        </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                            </label >
+                        </div >
+                        <div className="form-control w-full max-w-xs" >
+                            <label className="label" >
+                                <span className="label-text" > Password</span >
 
-                            </label>
-                            <input type="password" class="input input-bordered w-full max-w-xs"  {...register("password", {
+                            </label >
+                            <input type="password" className="input input-bordered w-full max-w-xs"  {...register("password", {
                                 required: {
                                     value: true,
                                     message: 'Password is required'
@@ -87,24 +90,24 @@ const Login = () => {
                                     message: 'Password must be atleast 6 character '
                                 }
                             })} />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+                            <label className="label" >
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500"> {errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500" > {errors.password.message}</span >}
 
 
-                            </label>
-                        </div>
+                            </label >
+                        </div >
                         {signInError}
-                        <input className='btn w-full max-w-xs ' type="submit" value="Login" />
-                    </form>
+                        < input className='btn w-full max-w-xs ' type="submit" value="Login" />
+                    </form >
                     <p>New to doctors portal?<span onClick={navigateSignUp} className='text-secondary pl-2 cursor-pointer'>Create a New Account</span></p>
-                    <div class="divider">OR</div>
+                    <div className="divider" > OR</div >
                     <button
                         onClick={() => signInWithGoogle()}
-                        class="btn btn-outline">CONTINUE WITH GOOGLE</button>
-                </div>
-            </div>
-        </div>
+                        className="btn btn-outline">CONTINUE WITH GOOGLE</button>
+                </div >
+            </div >
+        </div >
     );
 };
 

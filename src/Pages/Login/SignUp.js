@@ -50,36 +50,36 @@ const SignUp = () => {
 
     return (
         <div className='flex h-screen justify-center items-center '>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-2xl font-bold ">SignUp</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold ">SignUp</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
 
-                            </label>
-                            <input type="text" class="input input-bordered w-full max-w-xs"  {...register("name", {
+                            </label >
+                            <input type="text" className="input input-bordered w-full max-w-xs"  {...register("name", {
                                 required: {
                                     value: true,
                                     message: 'Name is required'
                                 }
                             })} />
-                            <label class="label">
-                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+                            <label className="label" >
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500"> {errors.name.message}</span>}
 
 
 
-                            </label>
-                        </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                            </label >
+                        </div >
+                        <div className="form-control w-full max-w-xs" >
+                            <label className="label" >
+                                <span className="label-text" > Email</span >
 
-                            </label>
-                            <input type="email" class="input input-bordered w-full max-w-xs"  {...register("email", {
+                            </label >
+                            <input type="email" className="input input-bordered w-full max-w-xs"  {...register("email", {
                                 required: {
                                     value: true,
                                     message: 'Email is required'
@@ -89,19 +89,19 @@ const SignUp = () => {
                                     message: 'Provide a valid email'
                                 }
                             })} />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                            <label className="label" >
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500"> {errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500" > {errors.email.message}</span >}
 
 
-                            </label>
-                        </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                            </label >
+                        </div >
+                        <div className="form-control w-full max-w-xs" >
+                            <label className="label" >
+                                <span className="label-text" > Password</span >
 
-                            </label>
-                            <input type="password" class="input input-bordered w-full max-w-xs"  {...register("password", {
+                            </label >
+                            <input type="password" className="input input-bordered w-full max-w-xs"  {...register("password", {
                                 required: {
                                     value: true,
                                     message: 'Password is required'
@@ -111,24 +111,24 @@ const SignUp = () => {
                                     message: 'Password must be atleast 6 character '
                                 }
                             })} />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+                            <label className="label" >
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500"> {errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500" > {errors.password.message}</span >}
 
 
-                            </label>
-                        </div>
+                            </label >
+                        </div >
                         {signInError}
-                        <input className='btn w-full max-w-xs ' type="submit" value="SignUp" />
-                    </form>
+                        < input className='btn w-full max-w-xs ' type="submit" value="SignUp" />
+                    </form >
                     <p>Already Have an Acoount?<span onClick={navigateLogin} className='text-secondary pl-2 cursor-pointer'>Login Account</span></p>
-                    <div class="divider">OR</div>
+                    <div className="divider" > OR</div >
                     <button
                         onClick={() => signInWithGoogle()}
-                        class="btn btn-outline">CONTINUE WITH GOOGLE</button>
-                </div>
-            </div>
-        </div>
+                        className="btn btn-outline">CONTINUE WITH GOOGLE</button>
+                </div >
+            </div >
+        </div >
     );
 };
 
